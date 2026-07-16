@@ -269,7 +269,7 @@ Each service should contain:
 # Project Structure
 
 ```
-ecommerce-parent/
+vangashop/
 │
 ├── pom.xml                               # Master Aggregator and Dependency Management
 │
