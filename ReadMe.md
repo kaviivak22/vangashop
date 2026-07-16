@@ -271,12 +271,80 @@ Each service should contain:
 ```
 ecommerce-parent/
 │
-├── eureka-server
-├── api-gateway
-├── product-service
-├── order-service
-├── user-service
-└── react-frontend
+├── pom.xml                               # Master Aggregator and Dependency Management
+│
+├── eureka-server/                        # Port 8761: Service Discovery
+│   ├── pom.xml
+│   └── src/main/
+│       ├── java/com/ecommerce/eurekaserver/EurekaServerApplication.java
+│       └── resources/application.yml
+│
+├── api-gateway/                          # Port 8080: Routing & Global CORS Filter
+│   ├── pom.xml
+│   └── src/main/
+│       ├── java/com/ecommerce/apigateway/ApiGatewayApplication.java
+│       └── resources/application.yml
+│
+├── product-service/                      # Port 8081: Independent Product Domain
+│   ├── pom.xml
+│   └── src/main/
+│       ├── java/com/ecommerce/
+│       │   ├── productservice/
+│       │   │   ├── ProductServiceApplication.java
+│       │   │   ├── controller/ProductController.java
+│       │   │   ├── dto/ProductDTO.java
+│       │   │   ├── entity/Product.java
+│       │   │   ├── repository/ProductRepository.java
+│       │   │   └── service/ProductService.java
+│       │   └── shared/exception/GlobalExceptionHandler.java
+│       └── resources/
+│           ├── application.yml
+│           └── data.sql                  # Automated Sample Inventory Seeds
+│
+├── order-service/                        # Port 8082: Transactions & Stock Consumption
+│   ├── pom.xml
+│   └── src/main/
+│       ├── java/com/ecommerce/
+│       │   ├── orderservice/
+│       │   │   ├── OrderServiceApplication.java
+│       │   │   ├── client/OrderClient.java (OpenFeign Interface)
+│       │   │   ├── controller/OrderController.java
+│       │   │   ├── dto/OrderDTO.java & ProductDTO.java
+│       │   │   ├── entity/Order.java
+│       │   │   ├── repository/OrderRepository.java
+│       │   │   └── service/OrderService.java
+│       │   └── shared/exception/GlobalExceptionHandler.java
+│       └── resources/application.yml
+│
+├── user-service/                         # Port 8083: Accounts Management
+│   ├── pom.xml
+│   └── src/main/
+│       ├── java/com/ecommerce/
+│       │   ├── userservice/
+│       │   │   ├── UserServiceApplication.java
+│       │   │   ├── controller/UserController.java
+│       │   │   ├── dto/UserDTO.java
+│       │   │   ├── entity/User.java
+│       │   │   ├── repository/UserRepository.java
+│       │   │   └── service/UserService.java
+│       │   └── shared/exception/GlobalExceptionHandler.java
+│       └── resources/application.yml
+│
+└── react-frontend/                       # Port 3000: SPA Web Client Application
+    ├── package.json
+    ├── public/index.html
+    └── src/
+        ├── App.js                        # Layout Controller & Client Routing
+        ├── index.js
+        ├── components/
+        │   └── Navbar.js                 # Unified Search Engine Interface
+        └── pages/
+            ├── Home.js                   # Dynamic Inventory Catalog
+            ├── ProductDetails.js         # Quantity Selector & Purchase Pipeline
+            ├── Orders.js                 # Transaction History Log
+            ├── Login.js                  # Security Identity Handshake
+            └── Register.js               # Profiling Registration Form
+
 ```
 
 ---
