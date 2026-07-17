@@ -263,7 +263,11 @@ Each service should contain:
 - Service
 - Controller
 - Exception Handling
-
+- FrontEnd: React.js, Redux, ReduxThunk, Javascript (ES6+), HTML5, CSS3,JSX,React Hooks
+- BackEnd:Java,SpringBoot,RESTful WebServices, Microservices
+-  Testing: Jest, Bruno,Unit Testing
+- API & Integration :REST APIs, Axios
+- Tools & Platforms : GitHub,Webpack,Docker,Jira,Confluence,VSCode NVDA,CCA(Color contrast Analyzer)
 ---
 
 # Project Structure

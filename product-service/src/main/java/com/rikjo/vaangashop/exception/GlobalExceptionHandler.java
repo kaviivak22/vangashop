@@ -1,4 +1,4 @@
-package com.rikjo.vaangashop.product_service.exception;
+package com.rikjo.vaangashop.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
+@AllArgsConstructor
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
@@ -27,7 +28,8 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
-    @Data @AllArgsConstructor
+    @Data
+    @AllArgsConstructor
     public static class ErrorResponse {
         private int status;
         private String message;
