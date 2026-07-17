@@ -24,3 +24,11 @@ eureka:
     client:
         serviceUrl:
             defaultZone: http://localhost:8761/eureka/
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  # Forces Swagger to use the gateway URL (localhost:8080) instead of the internal service URL
+  override-with-generic-response: true
+
