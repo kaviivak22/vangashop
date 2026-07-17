@@ -3,7 +3,10 @@ package com.rikjo.vaangashop.productservice.dto;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ProductDTO {
     private Long id;
     @NotBlank(message = "Product name cannot be empty")
