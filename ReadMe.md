@@ -22,7 +22,7 @@ The project should be simple, clean, and suitable for learning and portfolio pur
 
 ## Backend
 
-- Java 21 (or Java 17)
+- Java 25 (or Java 21)
 - Spring Boot 3.x
 - Spring Cloud
 - Spring Web
