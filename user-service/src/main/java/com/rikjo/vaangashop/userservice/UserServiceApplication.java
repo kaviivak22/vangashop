@@ -1,4 +1,4 @@
-package com.rikjo.vaangashop.user_service;
+package com.rikjo.vaangashop.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
