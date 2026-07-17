@@ -11,8 +11,8 @@
 	<groupId>com.rikjo.vaangashop</groupId>
 	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>eureka-server</name>
+	<description>Eureka Server for Vaangashop</description>
 	<url/>
 	<licenses>
 		<license/>
