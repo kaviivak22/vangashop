@@ -30,3 +30,13 @@ Tomcat started on port(s): 8761 (Eureka Server)...
 Netty started on port 8080 (API Gateway)...
 DiscoveryClient_API-GATEWAY registering service with eureka...
 ```
+Need to implement the following
+ ```text
+ Aspect to execute after all the services to audit all the transactions
+ Memcahe
+ Configuration class for flyway migration
+ Master slave configuration
+ Kubernetes
+ Docker deployment
+ 
+```
