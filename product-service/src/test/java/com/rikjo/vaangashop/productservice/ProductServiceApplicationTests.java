@@ -1,4 +1,4 @@
-package com.rikjo.vaangashop.product_service;
+package com.rikjo.vaangashop.productservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
