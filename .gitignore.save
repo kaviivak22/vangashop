@@ -1,0 +1,16 @@
+/target/
+*.class
+.classpath
+.project
+.settings/
+.factorypath
+.DS_Store
+.vscode/
+Use code with caution.Save and exit the editor by pressing Ctrl + O, hitting Enter, and then pressing Ctrl + X.Step 3: Stage and Commit Your Local WorkNow you can save your operational Spring Boot code baseline to a formal Git version control tracking point:Stage all your configuration files and source directories:bashgit add .
+Use code with caution.Verify which files are prepared for the tracking step (Optional but safe):bashgit status
+Use code with caution.Commit the tracked items with an active history message:bashgit commit -m "Initial commit: Set up Product Service with Java 25 and Lombok configurations"
+Use code with caution.Step 4: Push to a Remote Platform (Optional)If you want to host your repository online (like GitHub, GitLab, or Bitbucket) for portfolio purposes:Create a New Repository via your web browser on your cloud hosting platform.Link your local directory to that remote endpoint and upload your branch:bashgit branch -M main
+git remote add origin https://github.com
+git push -u origin main
+Use code with caution.Now your project build properties and source code are safely managed by version control.If you are interested, I can:Provide the step-by-step setup configuration for the Eureka Service Discovery registry.Provide the boilerplate code for the Order Service database model.Outline how to set up Spring Cloud API Gateway routing parameters.Let me know how you would like to proceed with your microservices architecture!
+
