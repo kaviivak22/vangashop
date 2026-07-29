@@ -1,6 +1,6 @@
 # Spring Boot Microservices E-Commerce Application
 
-Please refer this Repo in case of any doubts : https://github.com/oddy-bassey/Programming-Techie-SpringBoot-Microservices/tree/main
+Please refer this Repo in case of any doubts : https://github.com/SaiUpadhyayula/spring-boot-microservices
 
 ## Project Overview
 
