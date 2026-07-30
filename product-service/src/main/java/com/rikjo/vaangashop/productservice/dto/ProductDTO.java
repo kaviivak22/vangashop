@@ -8,16 +8,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ProductDTO {
-    private Long id;
-    @NotBlank(message = "Product name cannot be empty")
+    @NotBlank(message = "Product cannot be empty")
     private String name;
+   @NotBlank(message = "SKU code cannot be empty")
+    private String skuCode;
     @NotBlank(message = "Description cannot be empty")
     private String description;
-    @NotBlank(message = "Category cannot be empty")
-    private String category;
     @Positive(message = "Price must be greater than zero")
     private Double price;
-    @Min(value = 0, message = "Stock cannot be negative")
-    private Integer stock;
     private String imageUrl;
 }

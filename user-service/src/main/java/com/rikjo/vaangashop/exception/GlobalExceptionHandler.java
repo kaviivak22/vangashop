@@ -1,4 +1,4 @@
-package com.rikjo.vaangashop.product_service.exception;
+package com.rikjo.vaangashop.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

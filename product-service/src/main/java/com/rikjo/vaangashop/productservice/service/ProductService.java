@@ -17,13 +17,13 @@ public class ProductService {
     private final ProductRepository repository;
 
     private ProductDTO toDTO(Product p) {
-        return ProductDTO.builder().id(p.getId()).name(p.getName()).description(p.getDescription())
-                .category(p.getCategory()).price(p.getPrice()).stock(p.getStock()).imageUrl(p.getImageUrl()).build();
+        return ProductDTO.builder().name(p.getName()).description(p.getDescription())
+                .price(p.getPrice()).skuCode(p.getSkuCode()).imageUrl(p.getImageUrl()).build();
     }
 
     private Product toEntity(ProductDTO d) {
-        return Product.builder().id(d.getId()).name(d.getName()).description(d.getDescription())
-                .category(d.getCategory()).price(d.getPrice()).stock(d.getStock()).imageUrl(d.getImageUrl()).build();
+        return Product.builder().name(d.getName()).description(d.getDescription())
+                .price(d.getPrice()).skuCode(d.getSkuCode()).imageUrl(d.getImageUrl()).build();
     }
 
     public ProductDTO addProduct(ProductDTO dto) {
@@ -48,9 +48,7 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException("Product not found"));
         existing.setName(dto.getName());
         existing.setDescription(dto.getDescription());
-        existing.setCategory(dto.getCategory());
         existing.setPrice(dto.getPrice());
-        existing.setStock(dto.getStock());
         existing.setImageUrl(dto.getImageUrl());
         return toDTO(repository.save(existing));
     }
