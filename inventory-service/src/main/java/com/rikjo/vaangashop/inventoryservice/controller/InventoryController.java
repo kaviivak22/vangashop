@@ -27,9 +27,9 @@ public class InventoryController {
    
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
-        log.info("Received inventory check request for skuCode: {}", skuCode);
-        return inventoryService.isInStock(skuCode);
+    public List<InventoryResponse> isInStock(@RequestParam("skuCodes") List<String> skuCodes) {
+        log.info("Received inventory check request for skuCode: {}", skuCodes);
+        return inventoryService.isInStock(skuCodes);
     }
       
 }

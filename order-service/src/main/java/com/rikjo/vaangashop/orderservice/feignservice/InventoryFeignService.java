@@ -12,6 +12,6 @@ import com.rikjo.vaangashop.orderservice.dto.InventoryResponse;
 public interface InventoryFeignService {
 
     @GetMapping("/inventory")
-    List<InventoryResponse> isInStock(@RequestParam List<String> skuCodes);
+    List<InventoryResponse> isInStock(@RequestParam("skuCodes") List<String> skuCodes);
 
 }
