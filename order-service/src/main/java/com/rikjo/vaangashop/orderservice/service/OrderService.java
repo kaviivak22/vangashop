@@ -70,4 +70,9 @@ public class OrderService {
         return orderLineItems;
     }
 
+    public  List<Order>  getOrderHistory() {
+        List<Order> orderHistory = orderRepository.findAll();
+        return orderHistory;
+    }
+
 }

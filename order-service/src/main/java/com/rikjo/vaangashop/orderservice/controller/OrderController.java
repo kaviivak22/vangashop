@@ -1,10 +1,8 @@
 package com.rikjo.vaangashop.orderservice.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,10 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.rikjo.vaangashop.orderservice.dto.OrderRequest;
+import com.rikjo.vaangashop.orderservice.entity.Order;
 import com.rikjo.vaangashop.orderservice.service.OrderService;
 
 @RestController
-@RequestMapping("/ordeer")
+@RequestMapping("/order")
 @Slf4j
 public class OrderController {
 
@@ -28,6 +27,11 @@ public class OrderController {
     public String placeOrder(@RequestBody OrderRequest orderRequest) {
         orderService.placeOrder(orderRequest);
         return "Order Placed Successfully";
+    }
+  
+    @GetMapping
+    public ResponseEntity<List<Order>> getOrderHistory() {
+        return ResponseEntity.ok(orderService.getOrderHistory());
     }
       
 }
