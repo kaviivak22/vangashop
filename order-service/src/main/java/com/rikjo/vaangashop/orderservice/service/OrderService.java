@@ -42,7 +42,7 @@ public class OrderService {
                 .map(OrderLineItems::getSkuCode)
                 .toList();       
        
-        List<InventoryResponse> inventoryResponseList = inventoryService.getInventory(skuCodes);
+        List<InventoryResponse> inventoryResponseList = inventoryService.isInStock(skuCodes);
 
         boolean allProductsInStock = inventoryResponseList.stream()
         .allMatch(InventoryResponse::isInStock);

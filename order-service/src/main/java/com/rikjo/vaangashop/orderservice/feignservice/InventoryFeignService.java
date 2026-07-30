@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rikjo.vaangashop.orderservice.dto.InventoryResponse;
 
 @FeignClient(name = "INVENTORY-SERVICE")
 public interface InventoryFeignService {
 
-    @GetMapping("/inventory/{sku-codes}")
-    List<InventoryResponse> getInventory(@PathVariable List<String> skuCodes);
+    @GetMapping("/inventory")
+    List<InventoryResponse> isInStock(@RequestParam List<String> skuCodes);
+
 }
