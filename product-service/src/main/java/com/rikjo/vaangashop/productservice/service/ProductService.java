@@ -62,4 +62,8 @@ public class ProductService {
         log.info("Searching products matches: {}", name);
         return repository.findByNameContainingIgnoreCase(name).stream().map(this::toDTO).collect(Collectors.toList());
     }
+    public ProductDTO findBySkuCode(String skuCode) {
+        log.info("Get product By SKU CODE: {}", skuCode);
+       return toDTO(repository.findBySkuCode(skuCode));
+    }
 }

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.rikjo.vaangashop.inventoryservice.dto.InventoryResponse;
 import com.rikjo.vaangashop.inventoryservice.service.InventoryService;
 
 
@@ -23,7 +25,7 @@ public class InventoryController {
     private InventoryService inventoryService;
     @GetMapping("/{sku-code}")
     @ResponseStatus(HttpStatus.OK)
-    public boolean isInStock(@PathVariable("sku-code") String skuCode) {
+    public  List<InventoryResponse>  isInStock(@RequestParam List<String> skuCode) {
         return inventoryService.isInStock(skuCode);
     }
       

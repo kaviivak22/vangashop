@@ -6,4 +6,3 @@ import com.rikjo.vaangashop.orderservice.entity.Order;
 
 public interface OrderRepository  extends JpaRepository<Order, Long> {
 }
-
