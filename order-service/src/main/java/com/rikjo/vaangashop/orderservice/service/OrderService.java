@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rikjo.vaangashop.orderservice.dto.InventoryResponse;
-import com.rikjo.vaangashop.orderservice.dto.OrderLineItemsDto;
+import com.rikjo.vaangashop.orderservice.dto.OrderLineItemsRequestDto;
 import com.rikjo.vaangashop.orderservice.dto.OrderRequest;
 import com.rikjo.vaangashop.orderservice.entity.Order;
 import com.rikjo.vaangashop.orderservice.entity.OrderLineItems;
@@ -13,7 +13,6 @@ import com.rikjo.vaangashop.orderservice.repository.OrderRepository;
 
 import jakarta.transaction.Transactional;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -62,11 +61,11 @@ public class OrderService {
      * @param orderLineItemsDto
      * @return
      */
-    private OrderLineItems mapToDto(OrderLineItemsDto orderLineItemsDto) {
+    private OrderLineItems mapToDto(OrderLineItemsRequestDto orderLineItemsRequestDto) {
         OrderLineItems orderLineItems = new OrderLineItems();
-        orderLineItems.setPrice(orderLineItemsDto.getPrice());
-        orderLineItems.setQuantity(orderLineItemsDto.getQuantity());
-        orderLineItems.setSkuCode(orderLineItemsDto.getSkuCode());
+        orderLineItems.setPrice(orderLineItemsRequestDto.getPrice());
+        orderLineItems.setQuantity(orderLineItemsRequestDto.getQuantity());
+        orderLineItems.setSkuCode(orderLineItemsRequestDto.getSkuCode());
         return orderLineItems;
     }
 

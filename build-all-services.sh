@@ -2,9 +2,13 @@
 
 echo "**** Building all services Using Maven ****"
 echo " EUREKA-SERVER build ..."
-
+echo "Building eureka-server..."
 cd eureka-server/
 ./mvnw clean install -DskipTests || exit 1 
+
+echo " API-GATEWAY build ..."
+cd ../apigateway/
+./mvnw clean install -DskipTests || exit 1
 
 echo " PRODUCT-SERVICE build ..."
 cd ../product-service/

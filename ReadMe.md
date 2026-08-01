@@ -15,6 +15,8 @@ The application should demonstrate the core concepts of microservices, including
 - RESTful APIs
 - React.js Frontend
 - Layered Architecture
+- After API integration : http://localhost:8080/<SERVICE_NAME>/swagger-ui/index.html
+Example : products, order, inventory, etc 
 
 The project should be simple, clean, and suitable for learning and portfolio purposes.
 
@@ -66,7 +68,7 @@ The project should be simple, clean, and suitable for learning and portfolio pur
          └──────Feign───────┘
                 │
                 ▼
-         Product Service
+         Inventory Service
 
 All services register with
 
