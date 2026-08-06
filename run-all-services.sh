@@ -17,6 +17,13 @@ sleep 2
 
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9091" &
 sleep 2
+
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9092" &
+sleep 2
+
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9093" &
+sleep 2
+
 cd ../inventory-service/
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9190" &
 sleep 2
@@ -24,11 +31,6 @@ sleep 2
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9191" &
 sleep 2
 
-./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9192" &
-sleep 2
-
-./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9193" &
-sleep 2
 cd ../order-service/
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9290" &
 sleep 2
