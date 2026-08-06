@@ -11,12 +11,6 @@ done
 
 echo "Eureka is up."
 
-cd ../api-gateway/
-./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=8080" &
-sleep 2
-
-echo "API Gateway is up."
-
 cd ../product-service/
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9090" &
 sleep 2
@@ -41,3 +35,9 @@ sleep 2
 
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=9291" &
 sleep 2
+
+cd ../api-gateway/
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=8080" &
+sleep 2
+
+echo "API Gateway is up."

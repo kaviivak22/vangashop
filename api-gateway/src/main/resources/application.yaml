@@ -1,5 +1,7 @@
 server:
   port: 8080
+  forward-headers-strategy: framework
+
 
 spring:
   application:
@@ -9,7 +11,9 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "http://localhost:3000"
+            allowedOrigins:
+              - "http://localhost:3000"
+              - "http://localhost:8080"
             allowedMethods:
               - GET
               - POST
@@ -20,30 +24,41 @@ spring:
         - id: product-service
           uri: lb://PRODUCT-SERVICE
           predicates:
-            - Path=/products/**
+            - Path=/products,/products/**
           filters:
             - RewritePath=/products/(?<segment>.*), /${segment}
-            - AddRequestHeader=X-Forwarded-Prefix,/products
+            - AddRequestHeader=X-Forwarded-Prefix, /products
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
-            - Path=/order/**
+            - Path=/order,/order/**
           filters:
             - RewritePath=/order/(?<segment>.*), /${segment}
-            - AddRequestHeader=X-Forwarded-Prefix,/order
+            - AddRequestHeader=X-Forwarded-Prefix, /order
+
         - id: inventory-service
           uri: lb://INVENTORY-SERVICE
           predicates:
-            - Path=/inventory/**
+            - Path=/inventory,/inventory/**
           filters:
             - RewritePath=/inventory/(?<segment>.*), /${segment}
-            - AddRequestHeader=X-Forwarded-Prefix,/inventory
+            - AddRequestHeader=X-Forwarded-Prefix, /inventory
+
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-# Usage  : 
+# Usage  :
 logging:
   level:
     org.springframework.cloud.gateway: INFO
+springdoc:
+  swagger-ui:
+    urls:
+      - name: Product Service
+        url: /products/v3/api-docs
+      - name: Order Service
+        url: /order/v3/api-docs
+      - name: Inventory Service
+        url: /inventory/v3/api-docs
