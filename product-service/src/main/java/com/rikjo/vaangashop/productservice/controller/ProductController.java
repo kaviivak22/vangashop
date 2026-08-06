@@ -48,7 +48,7 @@ public class ProductController {
     public ResponseEntity<List<ProductDTO>> searchProducts(@RequestParam String name) {
         return ResponseEntity.ok(service.searchProducts(name));
     }
-    @GetMapping("/{sku-code}")
+    @GetMapping("/sku/{sku-code}")
     public ResponseEntity<ProductDTO> searchProductBySkuCode(@RequestParam String skuCode) {
         return ResponseEntity.ok(service.findBySkuCode(skuCode));
     }
